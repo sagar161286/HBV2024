@@ -3,6 +3,12 @@
 
 library(Seurat)
 library(ggplot2)
+library(tidyr)
+library(pheatmap)
+library(RColorBrewer)
+library(ComplexHeatmap)
+library(dplyr)
+library(ggpubr)
 
 hbv_hcv_github <- readRDS("hbv_hcv_github.rds")
 
@@ -16,9 +22,6 @@ fig1.genes <- read.table("Fig1B_heatmap_genes")
 DotPlot(hcv.hbv.integrated, features =fig1.genes$V1,cols = c("BrBG"), cluster.idents = F,group.by = c("seurat_clusters_new")) + RotatedAxis()
 
 ############################ Figure 1C ###############################
-
-library(dplyr)
-library(ggpubr)
 
 metadata <- as.data.frame(hbv_hcv_github@meta.data)
 
@@ -47,11 +50,6 @@ ggviolin(metadata, x = "seurat_clusters_new", y = "mem_up_utz_wo_year", fill = "
   stat_compare_means(label.y = 100) 
 
 ############################ Figure 1D ###############################
-
-library(tidyr)
-library(pheatmap)
-library(RColorBrewer)
-library(ComplexHeatmap)
 
 
 genes <- c("TCF7--chr5","LEF1--chr4","SELL--chr1","CCR7--chr17","CXCR3--chrX","ZEB1--chr10","ID3--chr1","CD28--chr2","KLRG1--chr12","CX3CR1--chr3","PRDM1--chr6","TNF--chr6","TBX21--chr17","BHLHE40--chr3","RORC--chr1","RORA--chr15","ZEB2--chr2","ID2--chr2","GZMA--chr5","GZMB--chr14","GNLY--chr2","PRF1--chr10","IFNG--chr12","CD69--chr12","TNFRSF9--chr1","CD38--chr4","HLA-DRB1--chr6","HLA-DRA--chr6","PDCD1--chr2","ENTPD1--chr10","CTLA4--chr2","LAG3--chr12","TIGIT--chr3","TRIB1--chr8","BATF--chr14","TOX--chr8","TOX2--chr20")
