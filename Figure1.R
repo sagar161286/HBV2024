@@ -68,9 +68,11 @@ rownames(annotation_col) = c("C0","C1", "C2","C3","C4")
 annotation_row = data.frame(class = factor(rep(c("Memory", "Effector", "Cytotoxic","Activated","Exhausted"), c(8, 10, 5,5,9))))
 rownames(annotation_row) = rownames(scaled_exp)
 
+set.seed(123)
+clust.col = sample(rainbow(30))
 ann_colors = list(Clusters = c(C0 = clust.col[1], C1 = clust.col[2], C2 = clust.col[3], C3 = clust.col[4], C4 = clust.col[5]),class = c(Memory = "#7570B3", Effector = "#E7298A", Cytotoxic = "#66A61E",Activated="darkred",Exhausted = "red"))
 hmcol = rev(colorRampPalette(brewer.pal(9, "RdBu"))(100))
-pheatmap(scaled_exp, cluster_rows = F, cluster_cols = F,annotation_col = annotation_col,  annotation_colors = ann_colors, show_colnames = F,annotation_row = annotation_row ,gaps_row = c(8,18,23,28,37), legend_labels = F, color = hmcol)
+pheatmap(scaled_exp, cluster_rows = F, cluster_cols = F,annotation_col = annotation_col,  annotation_colors = ann_colors, show_colnames = F,annotation_row = annotation_row, color = hmcol, gaps_row = c(8,18,23,28,37))
 
 
 ############################ Figure 1E ###############################
@@ -89,6 +91,9 @@ barplot(counts, col = clust.col, border = "white",ylim = c(0, 100), axes = FALSE
 axis(2, labels = c(0,20,40,60,80,100), at = c(0,20,40,60,80,100))
 
 ############################ Figure 1F ###############################
+
+DimPlot(hbv_hcv_github, group.by = c("cells")) # note that core and pol are HBV and before and after HCV
+DimPlot(hbv_hcv_github, group.by = c("ml_ex"))
 
 types <- as.data.frame(hbv_hcv_github@meta.data)
 types$new_types <- types$seurat_clusters_new
