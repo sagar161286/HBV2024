@@ -11,4 +11,17 @@ The manuscript has profiled HBV-specific CD8+ T cells using two different techni
 
 The Seurat object for data shown in Figure 1 can be downloaded from here-
 https://drive.google.com/file/d/1x5v8Vhiw1kOv-sSnfY-0iSd5NXYjawl2/view?usp=sharing
-Here we integrated the HBV data generated during the course of this study with our previously published HCV study in Nature Immunology (PMID: 33398179).
+Here, we integrated the HBV data generated during the course of this study with our previously published HCV study in Nature Immunology (PMID: 33398179).
+Afterwards follow Figure1.R script to reproduce the figures shown in the article.
+
+The Seurat object for the analysis shown in Figure 2 can be downloaded from here-
+https://drive.google.com/file/d/1-a9Q_XK3ApY_dAgIldmR2RNSiarkhTDY/view?usp=sharing
+Afterwards follow Figure2.R script to reproduce the figures shown in the article.
+
+The Seurat object for the analysis shown in Figure 3 can be downloaded from here-
+https://drive.google.com/file/d/10x1iQOJ3hfa08kzKlwV0LSs5qQBW3aHh/view?usp=sharing
+Afterwards follow Figure3.R script to reproduce the figures shown in the article.
+
+The Seurat object for the analysis shown in Figure 6 can be downloaded from here-
+https://drive.google.com/file/d/1PLt6B2tX6oEqrASBkclb-uuETrLgXtCt/view?usp=sharing
+Afterwards follow Figure6.R script to reproduce the figures shown in the article.
